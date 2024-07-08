@@ -7,7 +7,7 @@ This was my attempt to adapt his paper into C++.
 
 Before starting the actual algorithm, there is one thing we should do first.
 Before computing the bounding box, we should  transform the 3D Object into its convex hull, which is a shape that contains all vertices within. 
-I used an online converter[^2][^3] to transform the imputed OBJ files into convex hulls of themselves. 
+I used an online converter[^2][^3] to transform the imputed OBJ files into convex hulls of themselves.
 
 The Bounding Box algorithm itself starts with constructing a Gaussian Sphere, which is a unit sphere where each region is mapped to a vertex on the input polyhedra, where the distance from the origin is mapped to the unit normal vector that starts at the origin and goes through the vector in the input polyhedra.
 The paper uses loops through the Gaussian Sphere’s points, 6 of which (that are antipodal) will be used to make the final bounding box. 
@@ -17,7 +17,7 @@ Fortunately, the use of a Gaussian Surface is an optimization to the overall bru
 
 I ran into many, many problems trying to adapt this paper. The gaussian sphere was the largest, but finding any information on the paper was hard. It’s not like it isn’t a famous paper (it's in the top 10% of cited articles from the time[^4], along with being on the Wikipedia page on Bounding Boxes[^5]), but the search for information was a struggle regardless. Similarly, since my final implementation doesn’t have the optimizations, it works out to be closer to cubic time, not quadratic. Regardless, the bounding boxes found were significantly smaller than the axis aligned bounding box. 
 
-Overall, I'm happy with how it turned out. It acted as both an exuse to read about Bounding Boxes, something I find really intresting, while also letting me mess around more with GLSL and the graphics stuff.
+Overall, I'm happy with how it turned out. It acted as both an opportunity to learn more about Bounding Boxes, something I find quite interesting, while also letting me mess around more with GLSL and graphics.
 
 ## How to run
 
